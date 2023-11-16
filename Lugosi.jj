@@ -23,15 +23,25 @@ SKIP :
 TOKEN :
 {
   <MAIN: "main">
+| <LET: "let">
+| <VOID: "void">
+| <FLOAT: "float">
+| <BOOL: "bool">
 | <ACHAVES: "{">
 | <FCHAVES: "}">
+| <PONTOEVIRGULA: ";">
+| <ATRIBUICAO: ":=">
+| <SAIDA: "printIO">
+| <IF: "if">
+| <WHILE: "while">
+| <RETURN: "return">
 
 }
 
 TOKEN :
 {
-  <NUM : (["0"-"9"])+>
- |< ID: ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"])*>
+  <NUM : (["0"-"9"])+  ((".") (["0"-"9"])+)? (("E") ("+" | "-")? (["0"-"9"])+ )?>
+|< ID: ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"])* ("_")*>
 
 }
 
@@ -43,6 +53,12 @@ void Lugosi () :
 
 (
   <MAIN> { System.out.println("Palavra reservada: main");}
+| <VOID> { System.out.println("Palavra reservada: void");}
+| <LET> { System.out.println("Palavra reservada: let");}
+| <FLOAT> { System.out.println("Palavra reservada: float");}
+| <SAIDA> { System.out.println("Palavra reservada: printIO");}
+| <PONTOEVIRGULA> { System.out.println("Ponto e virgula ;");}
+| <ATRIBUICAO> { System.out.println("Atribuição: :=");}
 | <ACHAVES> { System.out.println("Abre chaves: {");}
 | <FCHAVES> { System.out.println("Fecha chaves: }");}
 | t=<NUM> { System.out.println("Número: "+ t.image);}
@@ -52,8 +68,3 @@ void Lugosi () :
 
 
 }
-
-
-
-
-
