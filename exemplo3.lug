@@ -1,0 +1,9 @@
+void main{
+    let bool teste_1;
+    let bool teste_2;
+    teste_1 := false;
+    teste_2 := true;
+    if(teste_1 && teste_2){
+        printIO teste_2;
+    };
+}

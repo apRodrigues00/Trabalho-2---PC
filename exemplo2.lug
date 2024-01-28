@@ -1,0 +1,9 @@
+void main{
+    let float teste;
+    let float teste2;
+    teste := 9.0;
+    teste2 := 9.0;
+    if (teste==teste2){
+        printIO teste2;
+    };
+}
