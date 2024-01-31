@@ -1,4 +1,7 @@
 void main{
+    teste();
+}
+def void teste(){
     let bool teste_1;
     let bool teste_2;
     teste_1 := false;
